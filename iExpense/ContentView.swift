@@ -13,7 +13,7 @@ class User {
 }
 
 struct ContentView: View {
-    @State private var user = User()
+    @StateObejct private var user = User()
     
     var body: some View {
         VStack {
