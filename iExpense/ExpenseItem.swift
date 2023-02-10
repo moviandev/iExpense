@@ -12,4 +12,3 @@ struct ExpenseItem {
     let tyoe: String
     let amount: Double
 }
-
