@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @AppStorage("tapCount") private var tapCount = 0
+    @AppStorage("tapCount") private var tapCount = 0 //bad ideia
     
     var body: some View {
         Button("Tap count \(tapCount)") {
