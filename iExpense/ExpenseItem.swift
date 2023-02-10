@@ -8,6 +8,7 @@
 import Foundation
 
 struct ExpenseItem {
+    let id = UUID()
     let name: String
     let tyoe: String
     let amount: Double
