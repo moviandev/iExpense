@@ -7,6 +7,25 @@
 
 import SwiftUI
 
+struct Amount: View {
+    let amount: Double
+    
+    var body: some View {
+        Text(amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+            .foregroundColor(defineColor(amount: amount))
+    }
+    
+    func defineColor(amount: Double) -> Color {
+        if amount <= 10 {
+            return .green
+        } else if amount > 10 && amount <= 100 {
+            return .orange
+        } else {
+            return .red
+        }
+    }
+}
+
 struct ContentView: View {
     @StateObject var expenses = Expenses()
     @State private var showingAddExpense = false
@@ -24,7 +43,7 @@ struct ContentView: View {
                         
                         Spacer()
                         
-                        Text(item.amount, format: .currency(code: "USD"))
+                        Amount(amount: item.amount)
                     }
                 }
                 .onDelete(perform: removeItem)
