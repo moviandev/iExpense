@@ -39,6 +39,9 @@ struct AddView: View {
                     dismiss()
                 }
             }
+            .accessibilityElement()
+            .accessibilityLabel("Name: \(name), value: \(amount)")
+            .accessibilityHint(type)
         }
     }
 }
